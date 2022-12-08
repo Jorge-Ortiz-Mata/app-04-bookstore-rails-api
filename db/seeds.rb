@@ -7,11 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 if Book.all.empty?
-  5.times do
+  10.times do
     Book.create(
       name: Faker::Book.title,
       author: Faker::Book.author,
-      price: rand(10...40)
+      price: rand(10.0...40.0)
     )
   end
 end
