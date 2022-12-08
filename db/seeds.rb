@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+if Book.all.empty?
+  5.times do
+    Book.create(
+      name: Faker::Book.title,
+      author: Faker::Book.author,
+      price: rand(10...40)
+    )
+  end
+end
