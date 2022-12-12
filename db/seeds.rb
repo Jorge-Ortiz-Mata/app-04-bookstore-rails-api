@@ -11,7 +11,8 @@ if Book.all.empty?
     Book.create(
       name: Faker::Book.title,
       author: Faker::Book.author,
-      price: rand(10.0...40.0)
+      price: rand(10.0...40.0),
+      description: Faker::Quote.matz
     )
   end
 end
