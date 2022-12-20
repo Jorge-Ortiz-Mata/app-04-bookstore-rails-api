@@ -2,7 +2,13 @@ class Api::V1::BooksController < ApplicationController
   before_action :set_book, only: %i[ show update destroy ]
 
   def index
-    @books = Book.all
+    @books = Book.all.order(created_at: :desc)
+
+    render json: @books
+  end
+
+  def favorite_books
+    @books = Book.where(is_favorite: true)
 
     render json: @books
   end
